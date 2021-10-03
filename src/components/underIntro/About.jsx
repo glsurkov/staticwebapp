@@ -1,8 +1,8 @@
 import React from 'react';
 import AboutItem from "./AboutItem";
-import imageSrc from "../../img/password.jpg"
-import imageSrc2 from "../../img/password.jpg"
-import imageSrc3 from "../../img/password.jpg"
+import imageSrc from "../../img/pngwing.com (1).png"
+import imageSrc2 from "../../img/cont.png"
+import imageSrc3 from "../../img/reviews.png"
 
 const About = () => {
     return (
