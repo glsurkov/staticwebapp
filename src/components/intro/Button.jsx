@@ -3,7 +3,7 @@ import '../../styles/style.css'
 
 const Button = (props) => {
     return (
-        <a className={props.button.class} href="#">{props.button.title}</a>
+        <a onClick = {() => props.button.click(true)} className={props.button.class} href="#">{props.button.title}</a>
     );
 };
 
