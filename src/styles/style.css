@@ -261,10 +261,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .drop_info_active{
+    margin-top: 8px;
+    padding-top: 0;
+    padding-left: 10px;
     position:absolute;
     display:block;
     width:100%;
-    border-left: 5px solid black;
+    border-left: 5px solid #75dee6;
+    border-radius: 10px;
 }
 .drop_info{
     position:absolute;
