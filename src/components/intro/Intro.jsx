@@ -3,11 +3,11 @@ import Container from "../Container";
 import '../../styles/style.css'
 import IntroInner from "./IntroInner";
 
-const Intro = ({show}) => {
+const Intro = ({show, showText}) => {
 
     return (
         <div className="intro">
-            <Container contain = {<IntroInner show = {show}/>}/>
+            <Container contain = {<IntroInner showText = {showText} show = {show}/>}/>
         </div>
     );
 };
