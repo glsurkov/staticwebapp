@@ -5,6 +5,8 @@ body {
     line-height:1.6;
     color:rgb(241, 228, 242);
 }
+
+
 *,
 *:before,
 *:after
@@ -31,6 +33,15 @@ h1,h2,h3,h4,h5,h6{
     height:100vh;
     background: url("../img/intro.jpg") center no-repeat;
     background-size:cover;
+}
+.intro2{
+    width:100%;
+    background: url("../img/intro.jpg") center;
+    background-size:cover;
+    height: 100%;
+    background-repeat: repeat;
+    position: absolute;
+    overflow-x: scroll;
 }
 
 /*intro_title*/
@@ -73,6 +84,7 @@ h1,h2,h3,h4,h5,h6{
     text-decoration:none;
     background-color: rgba(219, 183, 237, 0.5);
     border-radius: 25px;
+    cursor: pointer;
 }
 .btn2{
     padding: 10px 7px;
@@ -88,13 +100,58 @@ h1,h2,h3,h4,h5,h6{
     text-decoration:none;
     background-color: rgb(122, 26, 161);
     border-radius: 25px;
+    cursor: pointer;
 }
+
+.btn4{
+    margin: 0px;
+    display:block;
+    right: 1px;
+    top: 1px;
+    font-size: 20px;
+}
+
+.btn5{
+    margin:0px;
+    display: block;
+    font-size: 15px;
+}
+
+.btn6{
+    background-color:rgba(219, 112, 185,0.8);
+}
+
 .btn:hover{
     background-color: rgba(173, 112, 181,0.5)
 }
 
+.btn6:hover{
+    background-color:rgba(219, 112, 185,0.6) ;
+}
+
 .btn_active{
     background-color: deeppink;
+}
+
+.block_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height:max-content;
+    width:max-content;
+    position: absolute;
+    top:10px;
+    right:0px;
+}
+.block_container1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height:max-content;
+    width:max-content;
+    position: absolute;
+    top:30%;
+    right:0px;
 }
 
 /*header*/
@@ -286,4 +343,36 @@ h1,h2,h3,h4,h5,h6{
     position:absolute;
     display:none;
     width:100%;
+}
+
+.navbar{
+    height:60px;
+    width:100vw;
+    display:flex;
+    align-items: center;
+    padding:0 15px;
+}
+
+.navbar__links{
+    margin-left:auto;
+}
+
+.btn_container{
+    width: max-content;
+    height: max-content;
+    margin-right:20px
+}
+
+
+.flight_nav{
+    top: 0px;
+    display:block;
+    width:380px;
+    margin-bottom: 50px;
+}
+
+.back_btn{
+    position:absolute;
+    right : 1px;
+    top : 15px;
 }

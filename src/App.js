@@ -1,36 +1,44 @@
-import Intro from "./components/intro/Intro";
-import Header from "./components/header/Header";
-import Section from "./components/underIntro/Section";
-import ModalWindow from "./components/modalWindow/ModalWindow";
-import SignForm from "./components/signForm/SignForm";
-import {useState} from "react";
+import './styles/style.css';
+import React,{useState, useEffect} from "react";
+import {BrowserRouter} from "react-router-dom";
+import AppRouter from "./components/UI/AppRouter";
+import {AuthContext} from "./context";
 
 
 function App() {
 
-    const [modal, setModal] = useState(false);
+    const [isAuth,setIsAuth] = useState(false);
+    const [token,setToken] = useState(null);
+    const [admin,setIsAdmin] = useState(false);
 
-
-    const showModal = (state) =>
-    {
-        setModal(state);
-    }
-    const [text,setText] = useState('')
-
-    const FormType = (string) =>
-    {
-        setText(string);
-    }
+    useEffect( () => {
+        if(localStorage.getItem('auth'))
+        {
+            setIsAuth(true);
+        }
+    },[])
 
   return (
-    <div className="App">
-        <ModalWindow visible = {modal} setVisible = {setModal}>
-            <SignForm type = {text}/>
-        </ModalWindow>
-        <Header/>
-        <Intro show={showModal} showText = {FormType}/>
-        <Section/>
-    </div>
+    <AuthContext.Provider value = {
+            {
+                token,
+                setToken,
+                isAuth,
+                setIsAuth,
+                admin,
+                setIsAdmin
+            }
+         }>
+        <BrowserRouter>
+            {/*<div className = "navbar">
+                <div className = "navbar__links">
+                    <Link to = "/about"> О сайте</Link>
+                    <Link to = "/registerpage"> мэйн</Link>
+                </div>
+        <   /div>*/}
+            <AppRouter/>
+        </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 

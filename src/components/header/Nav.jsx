@@ -4,10 +4,10 @@ import NavLink from "./NavLink";
 const Nav = () => {
     return (
         <nav className = "nav">
-            <NavLink navlink = {"Information"}/>
-            <NavLink navlink = {"Service"}/>
-            <NavLink navlink = {"Blog"}/>
-            <NavLink navlink = {"Contact"}/>
+            <NavLink navlink = {"Information"} onClick = {()=>{}}/>
+            <NavLink navlink = {"Service"} onClick = {()=>{}}/>
+            <NavLink navlink = {"Blog"} onClick = {()=>{}}/>
+            <NavLink navlink = {"Contact"} onClick = {()=>{}}/>
         </nav>
     );
 };

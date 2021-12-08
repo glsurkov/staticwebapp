@@ -1,23 +1,22 @@
 import React, {useState} from 'react';
 import cl from "./SignForm.module.css";
 
-const SignUpForm = () => {
+const SignUpForm = ({getValue}) => {
     const [value,setValue] = useState('');
     const [posts,setPosts] = useState([
-        {id:1, caption: "e-mail" , text: ""},
-        {id:2, caption: "Login", text:""},
-        {id:3, caption: "Password",text:""},
-        {id:4, caption: "Confirm Password",text:""}
-        ]);
+        {id:1, caption: "Login"},
+        {id:2, caption: "Password"},
+    ]);
 
-    const TypeText = (post,e) =>{
+    const TypeText = (post,e,value) =>{
         post.text = setValue(e.target.text)
+        getValue(post.id,value);
     };
 
     return (
         <div className={cl.SignForm}>
             {posts.map(post =>
-                <input key = {post.id} className = {cl.Input} value={value} onChange = {(e) => TypeText(post,e)} placeholder={post.caption}/>
+                <input key = {post.id} className = {cl.Input} value={value} onChange = {(e) => TypeText(post,e,e.target.value)} placeholder={post.caption}/>
             )}
         </div>
     );
